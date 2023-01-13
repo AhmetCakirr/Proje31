@@ -1,0 +1,42 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div style="height:50px; width:100%">
+        <div style="float:left; width:20%; text-align:center;">
+            <a asp-controller="account" asp-action="welcome">
+                Welcome
+            </a>
+        </div>
+        <div style="float:left; width:20%; text-align:center;">
+            <a asp-controller="account" asp-action="Kredi">
+                Kredi
+            </a>
+        </div>
+        <div style="float:left; width:20%; text-align:center;">
+            <a asp-controller="account" asp-action="bos">
+                Boş
+            </a>
+        </div>
+        <div style="float:left; width:20%; text-align:center;">
+            <a asp-controller="fatura" asp-action="fatura">
+                Fatura
+            </a>
+        </div>
+        <div style="float:left; width:20%; text-align:center;">
+            <a asp-controller="account" asp-action="bos">
+                Boş
+            </a>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

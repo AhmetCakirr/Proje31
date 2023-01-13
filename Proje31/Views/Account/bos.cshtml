@@ -1,0 +1,48 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>KONUT KREDİSİ</h1>
+    <form method="post" asp-controller="sayfa" asp-action="konutkredi">
+        <label>1. Sayı : </label>
+        <input type="text" id="kt" onchange="computeLoan()" max="100000" min="0"><br><br>
+        <label>2. Sayı : </label>
+        <input type="text" id="oy" onchange="computeLoan()"><br><br>
+        <label>faiz : </label>
+        <input type="text" id="faiz" onchange="computeLoan()"><br><br>
+        <input type="submit" value="Login" id="buton" />
+    </form>
+    <br>
+    <div id="kutuToplam"></div>
+
+    <script>
+        //var btn = document.getElementById("btnTopla");
+            function computeLoan() {
+            var s1 = Number(document.getElementById("kt").value);
+            var s2 = Number(document.getElementById("oy").value);
+            var faiz;
+            if (s1 < 5000){
+                faiz = 1;
+            }
+            else if (s1 > 100000){
+                document.getElementById("kt").value="100000";
+            }
+            else{
+                faiz = 2;
+            }
+            
+
+            var toplam = s1+((s1*faiz/100)*s2);
+            toplam = toplam.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            document.getElementById("kutuToplam").innerHTML = "Girilen Sayıların Toplamı : " + toplam;
+        }
+    </script>
+</body>
+</html>

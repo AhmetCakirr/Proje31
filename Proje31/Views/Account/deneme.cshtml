@@ -1,0 +1,20 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h3>Login</h3>
+@ViewBag.msg
+
+
+<form method="post" asp-controller="account" asp-action="Regis">
+    UserName  <input type="text" name="username" />
+    <br>
+    Password  <input type="text" name="pw" />
+    <br>
+    E-Posta  <input type="text" name="posta" />
+    <br>
+    Ad  <input type="text" name="ad" />
+    <br>
+    Soy ad  <input type="text" name="soyad" />
+    <br>
+    <input type="submit" value="Kayıt Ol" />
+</form>
+

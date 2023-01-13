@@ -1,0 +1,18 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h3>Welcome bro
+    <br />
+    @ViewBag.firstName
+    <br />
+    @ViewBag.surname
+</h3>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+
+<a asp-controller="account" asp-action="logout">
+    logout
+</a>
+<a asp-controller="account" asp-action="Kredi">
+    Kredi
+</a>

@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Account/_Layout.cshtml";
+}
+<h3>faturahaha</h3>
+@ViewBag.msg
+
+
+
+
+<form method="post" asp-controller="fatura" asp-action="fatura">
+    Abone Numarası  <input type="text" name="aboneNo" />
+    <input type="submit" value="Login" />
+    
+</form>
+
+<h3>
+    Fatura ID: @ViewBag.id <br />
+    Abone Numarası: @ViewBag.aboneNo<br />
+    Ad Soyad: @ViewBag.adsoyad<br />
+    Fatura Tutarı: @ViewBag.tutar
+</h3>
+<form method="post" asp-controller="fatura" asp-action="faturasil">
+    Abone Numarası  <input type="text" name="aboneNo" />
+    <input type="submit" value="Login" />
+
+</form>
